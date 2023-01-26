@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct MercedesYelpKeLiuApp: App {
+    let app = ApplicationController()
     var body: some Scene {
         WindowGroup {
             ContentView()

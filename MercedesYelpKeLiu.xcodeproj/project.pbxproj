@@ -16,6 +16,9 @@
 		E309507D29822B5C005B1837 /* DataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507C29822B5C005B1837 /* DataGroup.swift */; };
 		E309507F29822B87005B1837 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507E29822B87005B1837 /* Restaurant.swift */; };
 		E309508129822C44005B1837 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508029822C44005B1837 /* Review.swift */; };
+		E309508329822F2C005B1837 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508229822F2C005B1837 /* ViewModel.swift */; };
+		E309508529822F8A005B1837 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508429822F8A005B1837 /* ApplicationController.swift */; };
+		E309508729822FEF005B1837 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508629822FEF005B1837 /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		E309507C29822B5C005B1837 /* DataGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGroup.swift; sourceTree = "<group>"; };
 		E309507E29822B87005B1837 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E309508029822C44005B1837 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		E309508229822F2C005B1837 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E309508429822F8A005B1837 /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
+		E309508629822FEF005B1837 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				E309506629821AED005B1837 /* MercedesYelpKeLiuApp.swift */,
+				E309508429822F8A005B1837 /* ApplicationController.swift */,
+				E309508629822FEF005B1837 /* Box.swift */,
 				E309506829821AED005B1837 /* ContentView.swift */,
 				E309507429822027005B1837 /* Network */,
 				E30950752982203A005B1837 /* Model */,
@@ -110,6 +118,7 @@
 		E309507729822058005B1837 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E309508229822F2C005B1837 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,13 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E309508529822F8A005B1837 /* ApplicationController.swift in Sources */,
 				E309507B29822437005B1837 /* NetworkManager.swift in Sources */,
 				E309506929821AED005B1837 /* ContentView.swift in Sources */,
 				E309508129822C44005B1837 /* Review.swift in Sources */,
 				E309507F29822B87005B1837 /* Restaurant.swift in Sources */,
 				E309507D29822B5C005B1837 /* DataGroup.swift in Sources */,
 				E309507929822387005B1837 /* Endpoints.swift in Sources */,
+				E309508329822F2C005B1837 /* ViewModel.swift in Sources */,
 				E309506729821AED005B1837 /* MercedesYelpKeLiuApp.swift in Sources */,
+				E309508729822FEF005B1837 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
