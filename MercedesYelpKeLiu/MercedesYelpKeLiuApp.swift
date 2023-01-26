@@ -12,7 +12,7 @@ struct MercedesYelpKeLiuApp: App {
     let app = ApplicationController()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootNavigationView(viewModel: app.viewModel)
         }
     }
 }
