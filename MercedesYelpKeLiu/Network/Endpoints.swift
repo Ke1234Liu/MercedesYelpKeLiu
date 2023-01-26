@@ -8,7 +8,7 @@
 import Foundation
 
 struct Endpoints {
-    
+
     struct Endpoint<Response: Decodable> {
         let url: URL
         let responseType: Response.Type
@@ -24,3 +24,5 @@ struct Endpoints {
         return Endpoint(url: url, responseType: ReviewsResponse.self)
     }
 }
+
+

@@ -13,20 +13,24 @@
 		E309506E29821AEE005B1837 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E309506D29821AEE005B1837 /* Preview Assets.xcassets */; };
 		E309507929822387005B1837 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507829822387005B1837 /* Endpoints.swift */; };
 		E309507B29822437005B1837 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507A29822437005B1837 /* NetworkManager.swift */; };
-		E309507D29822B5C005B1837 /* DataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507C29822B5C005B1837 /* DataGroup.swift */; };
 		E309507F29822B87005B1837 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507E29822B87005B1837 /* Restaurant.swift */; };
 		E309508129822C44005B1837 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508029822C44005B1837 /* Review.swift */; };
 		E309508329822F2C005B1837 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508229822F2C005B1837 /* ViewModel.swift */; };
 		E309508529822F8A005B1837 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508429822F8A005B1837 /* ApplicationController.swift */; };
 		E309508729822FEF005B1837 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508629822FEF005B1837 /* Box.swift */; };
 		E3F1E53329823471007A493F /* DataGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E53229823471007A493F /* DataGroupCell.swift */; };
-		E3F1E535298234FB007A493F /* DataGroupTitledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E534298234FB007A493F /* DataGroupTitledView.swift */; };
 		E3F1E5372982352A007A493F /* RootNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E5362982352A007A493F /* RootNavigationView.swift */; };
 		E3F1E5392982353D007A493F /* RestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E5382982353D007A493F /* RestaurantsView.swift */; };
 		E3F1E53B2982355A007A493F /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E53A2982355A007A493F /* LoadingOverlay.swift */; };
 		E3F1E53D29823587007A493F /* RestaurantsTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E53C29823587007A493F /* RestaurantsTableCellView.swift */; };
 		E3F1E53F298235A9007A493F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E53E298235A9007A493F /* ErrorView.swift */; };
 		E3F1E541298235D8007A493F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E540298235D8007A493F /* Device.swift */; };
+		E3F1E5432982E4E2007A493F /* ReviewTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E5422982E4E2007A493F /* ReviewTableCellView.swift */; };
+		E3F1E5452982E504007A493F /* RestaurantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E5442982E504007A493F /* RestaurantDetailsView.swift */; };
+		E3F1E5472982E52B007A493F /* ImageBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E5462982E52B007A493F /* ImageBucket.swift */; };
+		E3F1E5492982E6D1007A493F /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E5482982E6D1007A493F /* RestaurantDetails.swift */; };
+		E3F1E54B29830015007A493F /* ExpandCollapseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E54A29830015007A493F /* ExpandCollapseButton.swift */; };
+		E3F1E54D2983014D007A493F /* ExpandableParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1E54C2983014D007A493F /* ExpandableParagraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,20 +41,24 @@
 		E309506D29821AEE005B1837 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E309507829822387005B1837 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		E309507A29822437005B1837 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		E309507C29822B5C005B1837 /* DataGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGroup.swift; sourceTree = "<group>"; };
 		E309507E29822B87005B1837 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E309508029822C44005B1837 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		E309508229822F2C005B1837 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E309508429822F8A005B1837 /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E309508629822FEF005B1837 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		E3F1E53229823471007A493F /* DataGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGroupCell.swift; sourceTree = "<group>"; };
-		E3F1E534298234FB007A493F /* DataGroupTitledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGroupTitledView.swift; sourceTree = "<group>"; };
 		E3F1E5362982352A007A493F /* RootNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationView.swift; sourceTree = "<group>"; };
 		E3F1E5382982353D007A493F /* RestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsView.swift; sourceTree = "<group>"; };
 		E3F1E53A2982355A007A493F /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		E3F1E53C29823587007A493F /* RestaurantsTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableCellView.swift; sourceTree = "<group>"; };
 		E3F1E53E298235A9007A493F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		E3F1E540298235D8007A493F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		E3F1E5422982E4E2007A493F /* ReviewTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableCellView.swift; sourceTree = "<group>"; };
+		E3F1E5442982E504007A493F /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
+		E3F1E5462982E52B007A493F /* ImageBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBucket.swift; sourceTree = "<group>"; };
+		E3F1E5482982E6D1007A493F /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
+		E3F1E54A29830015007A493F /* ExpandCollapseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCollapseButton.swift; sourceTree = "<group>"; };
+		E3F1E54C2983014D007A493F /* ExpandableParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableParagraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +126,9 @@
 		E30950752982203A005B1837 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E309507C29822B5C005B1837 /* DataGroup.swift */,
 				E309507E29822B87005B1837 /* Restaurant.swift */,
 				E309508029822C44005B1837 /* Review.swift */,
+				E3F1E5482982E6D1007A493F /* RestaurantDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,12 +137,15 @@
 			isa = PBXGroup;
 			children = (
 				E3F1E53229823471007A493F /* DataGroupCell.swift */,
-				E3F1E534298234FB007A493F /* DataGroupTitledView.swift */,
 				E3F1E5362982352A007A493F /* RootNavigationView.swift */,
 				E3F1E5382982353D007A493F /* RestaurantsView.swift */,
 				E3F1E53A2982355A007A493F /* LoadingOverlay.swift */,
 				E3F1E53C29823587007A493F /* RestaurantsTableCellView.swift */,
 				E3F1E53E298235A9007A493F /* ErrorView.swift */,
+				E3F1E5422982E4E2007A493F /* ReviewTableCellView.swift */,
+				E3F1E5442982E504007A493F /* RestaurantDetailsView.swift */,
+				E3F1E54A29830015007A493F /* ExpandCollapseButton.swift */,
+				E3F1E54C2983014D007A493F /* ExpandableParagraph.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E309508229822F2C005B1837 /* ViewModel.swift */,
+				E3F1E5462982E52B007A493F /* ImageBucket.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,15 +235,19 @@
 				E3F1E541298235D8007A493F /* Device.swift in Sources */,
 				E309508129822C44005B1837 /* Review.swift in Sources */,
 				E3F1E53F298235A9007A493F /* ErrorView.swift in Sources */,
+				E3F1E5472982E52B007A493F /* ImageBucket.swift in Sources */,
 				E3F1E53329823471007A493F /* DataGroupCell.swift in Sources */,
 				E309507F29822B87005B1837 /* Restaurant.swift in Sources */,
-				E309507D29822B5C005B1837 /* DataGroup.swift in Sources */,
 				E3F1E5392982353D007A493F /* RestaurantsView.swift in Sources */,
+				E3F1E54D2983014D007A493F /* ExpandableParagraph.swift in Sources */,
 				E3F1E53D29823587007A493F /* RestaurantsTableCellView.swift in Sources */,
 				E3F1E53B2982355A007A493F /* LoadingOverlay.swift in Sources */,
 				E309507929822387005B1837 /* Endpoints.swift in Sources */,
-				E3F1E535298234FB007A493F /* DataGroupTitledView.swift in Sources */,
+				E3F1E5432982E4E2007A493F /* ReviewTableCellView.swift in Sources */,
+				E3F1E54B29830015007A493F /* ExpandCollapseButton.swift in Sources */,
+				E3F1E5492982E6D1007A493F /* RestaurantDetails.swift in Sources */,
 				E309508329822F2C005B1837 /* ViewModel.swift in Sources */,
+				E3F1E5452982E504007A493F /* RestaurantDetailsView.swift in Sources */,
 				E309506729821AED005B1837 /* MercedesYelpKeLiuApp.swift in Sources */,
 				E3F1E5372982352A007A493F /* RootNavigationView.swift in Sources */,
 				E309508729822FEF005B1837 /* Box.swift in Sources */,

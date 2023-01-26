@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RestaurantsTableCellView: View {
+struct RestaurantTableCellView: View {
     @ObservedObject var viewModel: ViewModel
     let restaurant: Restaurant
     
@@ -25,7 +25,6 @@ struct RestaurantsTableCellView: View {
                             .font(.system(size: Device.isIpad ? 34.0 : 26.0))
                             .foregroundColor(Color("theme1_charcoal"))
                     }
-            
                     Spacer()
                 }
                 .padding(.vertical, Device.isIpad ? 16.0 : 9.0)
@@ -41,9 +40,8 @@ struct RestaurantsTableCellView: View {
     }
     
     func thumbView() -> some View {
-        
         ZStack {
-            if let image = viewModel.image(for: restaurant) {
+            if let image = viewModel.restaurantImage(for: restaurant) {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -52,7 +50,7 @@ struct RestaurantsTableCellView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12.0))
             } else {
                 ZStack {
-                    if viewModel.imageDownloadError(for: restaurant) {
+                    if viewModel.restaurantImageDownloadError(for: restaurant) {
                         Image(systemName: "exclamationmark.triangle.fill")
                             .font(.system(size: Device.isIpad ? 64.0 : 48.0))
                             .foregroundColor(Color("theme1_charcoal"))
@@ -60,10 +58,8 @@ struct RestaurantsTableCellView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
                             .tint(Color("theme1_charcoal"))
-                            .dynamicTypeSize(DynamicTypeSize.xxxLarge)
+                            .dynamicTypeSize(Device.isIpad ? DynamicTypeSize.xxLarge : DynamicTypeSize.large)
                     }
-                    
-                    
                 }
                 .frame(width: Device.isIpad ? 120.0 : 90.0,
                        height: Device.isIpad ? 120.0 : 90.0)
@@ -80,9 +76,9 @@ struct RestaurantsTableCellView: View {
     }
 }
 
-struct RestaurantsTableCellView_Previews: PreviewProvider {
+struct RestaurantTableCellView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantsTableCellView(viewModel: ViewModel.mock(),
+        RestaurantTableCellView(viewModel: ViewModel.mock(),
                                  restaurant: Restaurant.mock())
     }
 }

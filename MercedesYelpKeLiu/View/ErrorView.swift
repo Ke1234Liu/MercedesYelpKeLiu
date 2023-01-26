@@ -43,4 +43,3 @@ struct ErrorView_Previews: PreviewProvider {
         ErrorView(text: "Unable to fetch restaurants, please try again...")
     }
 }
-

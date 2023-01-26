@@ -18,9 +18,8 @@ struct LoadingOverlay: View {
                 VStack(spacing: Device.isIpad ? 24.0 : 16.0) {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
-                        
                         .tint(Color("theme1_saffron"))
-                        .dynamicTypeSize(DynamicTypeSize.xxxLarge)
+                        .dynamicTypeSize(Device.isIpad ? DynamicTypeSize.xxxLarge : DynamicTypeSize.xLarge)
                         .scaleEffect(CGSize(width: 1.65, height: 1.65))
                     
                     HStack {

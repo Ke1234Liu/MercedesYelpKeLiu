@@ -18,18 +18,26 @@ struct RestaurantsView: View {
                 ZStack {
                     restaurantsView()
                     
-                    //TODO: detail page
-                    if viewModel.isFetchingRestaurants || viewModel.isFetchingRestaurants {
-                        LoadingOverlay(text: "Loading...")
+                    if viewModel.isFetchingRestaurants {
+                        LoadingOverlay(text: "Loading Restaurants...")
+                    } else if viewModel.isFetchingReviews {
+                        LoadingOverlay(text: "Loading Details...")
                     }
                 }
             }
         }
+        .navigationTitle("Hot Locals")
+        .navigationDestination(for: RestaurantDetails.self) { restaurantDetails in
+            RestaurantDetailsView(viewModel: viewModel,
+                                  restaurantDetails: restaurantDetails)
+        }
         .background(Color("theme1_charcoal").edgesIgnoringSafeArea(.all))
-    }
-    
-    private func errorView() -> some View {
-        ErrorView(text: "Unable to fetch launches, please try again...")
+        .alert("Sorry, we could not fetch the reviews for this restaurant.",
+               isPresented: $viewModel.didFailToFetchReviews) {
+            Button("OK") { }
+        }
+        
+        
     }
     
     private func restaurantsView() -> some View {
@@ -37,7 +45,7 @@ struct RestaurantsView: View {
             Button {
                 viewModel.selectRestaurantIntent(for: restaurant)
             } label: {
-                RestaurantsTableCellView(viewModel: viewModel,
+                RestaurantTableCellView(viewModel: viewModel,
                                          restaurant: restaurant)
             }
             .listRowInsets(EdgeInsets())
@@ -51,6 +59,10 @@ struct RestaurantsView: View {
         }
         .listStyle(.plain)
     }
+    
+    private func errorView() -> some View {
+        ErrorView(text: "Sorry, we could not fill your request, please check your connection and try again...")
+    }
 }
 
 struct RestaurantsView_Previews: PreviewProvider {
@@ -58,4 +70,3 @@ struct RestaurantsView_Previews: PreviewProvider {
         RestaurantsView(viewModel: ViewModel.mock())
     }
 }
-
