@@ -11,6 +11,8 @@
 		E309506929821AED005B1837 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309506829821AED005B1837 /* ContentView.swift */; };
 		E309506B29821AEE005B1837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E309506A29821AEE005B1837 /* Assets.xcassets */; };
 		E309506E29821AEE005B1837 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E309506D29821AEE005B1837 /* Preview Assets.xcassets */; };
+		E309507929822387005B1837 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507829822387005B1837 /* Endpoints.swift */; };
+		E309507B29822437005B1837 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507A29822437005B1837 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E309506829821AED005B1837 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E309506A29821AEE005B1837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E309506D29821AEE005B1837 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E309507829822387005B1837 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		E309507A29822437005B1837 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,10 @@
 			children = (
 				E309506629821AED005B1837 /* MercedesYelpKeLiuApp.swift */,
 				E309506829821AED005B1837 /* ContentView.swift */,
+				E309507429822027005B1837 /* Network */,
+				E30950752982203A005B1837 /* Model */,
+				E309507629822047005B1837 /* View */,
+				E309507729822058005B1837 /* ViewModel */,
 				E309506A29821AEE005B1837 /* Assets.xcassets */,
 				E309506C29821AEE005B1837 /* Preview Content */,
 			);
@@ -65,6 +73,36 @@
 				E309506D29821AEE005B1837 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E309507429822027005B1837 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E309507829822387005B1837 /* Endpoints.swift */,
+				E309507A29822437005B1837 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E30950752982203A005B1837 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E309507629822047005B1837 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E309507729822058005B1837 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E309507B29822437005B1837 /* NetworkManager.swift in Sources */,
 				E309506929821AED005B1837 /* ContentView.swift in Sources */,
+				E309507929822387005B1837 /* Endpoints.swift in Sources */,
 				E309506729821AED005B1837 /* MercedesYelpKeLiuApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
