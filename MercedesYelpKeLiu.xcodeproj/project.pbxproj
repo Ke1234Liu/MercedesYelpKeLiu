@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E309506729821AED005B1837 /* MercedesYelpKeLiuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309506629821AED005B1837 /* MercedesYelpKeLiuApp.swift */; };
-		E309506929821AED005B1837 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309506829821AED005B1837 /* ContentView.swift */; };
 		E309506B29821AEE005B1837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E309506A29821AEE005B1837 /* Assets.xcassets */; };
 		E309506E29821AEE005B1837 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E309506D29821AEE005B1837 /* Preview Assets.xcassets */; };
 		E309507929822387005B1837 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507829822387005B1837 /* Endpoints.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		E309506329821AED005B1837 /* MercedesYelpKeLiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercedesYelpKeLiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E309506629821AED005B1837 /* MercedesYelpKeLiuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercedesYelpKeLiuApp.swift; sourceTree = "<group>"; };
-		E309506829821AED005B1837 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E309506A29821AEE005B1837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E309506D29821AEE005B1837 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E309507829822387005B1837 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				E309506629821AED005B1837 /* MercedesYelpKeLiuApp.swift */,
 				E309508429822F8A005B1837 /* ApplicationController.swift */,
 				E309508629822FEF005B1837 /* Box.swift */,
-				E309506829821AED005B1837 /* ContentView.swift */,
 				E3F1E540298235D8007A493F /* Device.swift */,
 				E309507429822027005B1837 /* Network */,
 				E30950752982203A005B1837 /* Model */,
@@ -231,7 +228,6 @@
 			files = (
 				E309508529822F8A005B1837 /* ApplicationController.swift in Sources */,
 				E309507B29822437005B1837 /* NetworkManager.swift in Sources */,
-				E309506929821AED005B1837 /* ContentView.swift in Sources */,
 				E3F1E541298235D8007A493F /* Device.swift in Sources */,
 				E309508129822C44005B1837 /* Review.swift in Sources */,
 				E3F1E53F298235A9007A493F /* ErrorView.swift in Sources */,

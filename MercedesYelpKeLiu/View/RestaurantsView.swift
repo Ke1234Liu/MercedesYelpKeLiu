@@ -31,7 +31,6 @@ struct RestaurantsView: View {
             RestaurantDetailsView(viewModel: viewModel,
                                   restaurantDetails: restaurantDetails)
         }
-        .background(Color("theme1_charcoal").edgesIgnoringSafeArea(.all))
         .alert("Sorry, we could not fetch the reviews for this restaurant.",
                isPresented: $viewModel.didFailToFetchReviews) {
             Button("OK") { }
