@@ -13,6 +13,9 @@
 		E309506E29821AEE005B1837 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E309506D29821AEE005B1837 /* Preview Assets.xcassets */; };
 		E309507929822387005B1837 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507829822387005B1837 /* Endpoints.swift */; };
 		E309507B29822437005B1837 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507A29822437005B1837 /* NetworkManager.swift */; };
+		E309507D29822B5C005B1837 /* DataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507C29822B5C005B1837 /* DataGroup.swift */; };
+		E309507F29822B87005B1837 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309507E29822B87005B1837 /* Restaurant.swift */; };
+		E309508129822C44005B1837 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309508029822C44005B1837 /* Review.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		E309506D29821AEE005B1837 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E309507829822387005B1837 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		E309507A29822437005B1837 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E309507C29822B5C005B1837 /* DataGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGroup.swift; sourceTree = "<group>"; };
+		E309507E29822B87005B1837 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		E309508029822C44005B1837 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,9 @@
 		E30950752982203A005B1837 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E309507C29822B5C005B1837 /* DataGroup.swift */,
+				E309507E29822B87005B1837 /* Restaurant.swift */,
+				E309508029822C44005B1837 /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +186,9 @@
 			files = (
 				E309507B29822437005B1837 /* NetworkManager.swift in Sources */,
 				E309506929821AED005B1837 /* ContentView.swift in Sources */,
+				E309508129822C44005B1837 /* Review.swift in Sources */,
+				E309507F29822B87005B1837 /* Restaurant.swift in Sources */,
+				E309507D29822B5C005B1837 /* DataGroup.swift in Sources */,
 				E309507929822387005B1837 /* Endpoints.swift in Sources */,
 				E309506729821AED005B1837 /* MercedesYelpKeLiuApp.swift in Sources */,
 			);
