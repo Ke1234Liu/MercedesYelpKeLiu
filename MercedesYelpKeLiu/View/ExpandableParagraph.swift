@@ -26,7 +26,6 @@ extension View {
 }
     
 struct ExpandableParagraph: View {
-    
     @State private var expandedSize: CGSize = .zero
     @State private var limitedSize: CGSize = .zero
     @State private var needsExpandRow = false
@@ -34,7 +33,6 @@ struct ExpandableParagraph: View {
     
     let text: String
     let lineLimit: Int?
-    
     var body: some View {
         VStack {
             HStack {
@@ -79,7 +77,7 @@ struct ExpandableParagraph: View {
         .box(backgroundColor: Color("theme2_yale"),
                  strokeColor: Color("theme1_saffron"),
                  cornerRadius: 12.0,
-                 strokeWidth: Device.isIpad ? 6.0 : 3.0)
+                 strokeWidth: Device.isIpad ? 2.0 : 1.0)
         .clipShape(RoundedRectangle(cornerRadius: 12.0))
         .padding(.horizontal, Device.isIpad ? 12.0 : 8.0)
     }
@@ -96,8 +94,6 @@ struct ExpandableParagraph: View {
             needsExpandRow = expandable
         }
     }
-    
-    
 }
 
 struct ExpandableParagraph_Previews: PreviewProvider {

@@ -53,27 +53,17 @@ class ImageBucket {
                     throw ImageBucketError.invalidDimension
                 }
                 
-                //if Bool.random() {
-                //throw ImageBucketError.invalidDimension
-                //}
-                
                 errorSet.remove(hashable)
                 downloadTaskDict.removeValue(forKey: hashable)
                 imageDict[hashable] = image
                 publisher.send(true)
                 
             } catch let error {
-                print("thumb download error: \(error.localizedDescription)")
-                print("thumb download url: \(url)")
-                
                 if Task.isCancelled {
-                    
                     errorSet.remove(hashable)
                     downloadTaskDict.removeValue(forKey: hashable)
                     publisher.send(false)
-                    
                 } else {
-                    
                     errorSet.insert(hashable)
                     downloadTaskDict.removeValue(forKey: hashable)
                     publisher.send(false)
@@ -101,6 +91,4 @@ class ImageBucket {
         downloadTaskDict.removeValue(forKey: hashable)
         publisher.send(false)
     }
-    
-    
 }

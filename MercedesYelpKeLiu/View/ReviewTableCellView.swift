@@ -12,7 +12,6 @@ struct ReviewTableCellView: View {
     let review: Review
     
     var body: some View {
-        
         VStack(spacing: 0) {
             HStack {
                 HStack {
@@ -61,7 +60,7 @@ struct ReviewTableCellView: View {
         .box(backgroundColor: Color("theme1_saffron"),
              strokeColor: Color("theme1_charcoal"),
              cornerRadius: 12.0,
-             strokeWidth: Device.isIpad ? 6.0 : 3.0)
+             strokeWidth: Device.isIpad ? 2.0 : 1.0)
         .padding(.horizontal, Device.isIpad ? 24.0 : 16.0)
         .padding(.vertical, Device.isIpad ? 7.0 : 4.0)
     }
@@ -93,7 +92,7 @@ struct ReviewTableCellView: View {
                 .box(backgroundColor: Color("theme1_mudslide"),
                          strokeColor: Color("theme1_charcoal"),
                          cornerRadius: 12.0,
-                         strokeWidth: Device.isIpad ? 6.0 : 3.0)
+                         strokeWidth: Device.isIpad ? 2.0 : 1.0)
             }
         }
         .frame(width: Device.isIpad ? 120.0 : 90.0,
@@ -109,4 +108,3 @@ struct ReviewTableCellView_Previews: PreviewProvider {
                             review: Review.mock())
     }
 }
-

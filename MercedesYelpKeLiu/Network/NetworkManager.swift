@@ -15,7 +15,6 @@ class NetworkManager {
     
     func download<ResponseType>(endpoint: Endpoints.Endpoint<ResponseType>) async throws -> ResponseType {
         
-        
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         var request = URLRequest(url: endpoint.url)

@@ -23,12 +23,13 @@ class ViewModel: ObservableObject {
     @Published var restaurants = [Restaurant]()
     @Published var didFailToFetchRestaurants = false
     
-    
     @Published var isFetchingReviews = false
     @Published var didFailToFetchReviews = false
     
-    let restaurantImageBucket = ImageBucket()
-    let reviewImageBucket = ImageBucket()
+    private let restaurantImageBucket = ImageBucket()
+    private let reviewImageBucket = ImageBucket()
+    
+    private let locationManager = LocationManager()
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -37,7 +38,8 @@ class ViewModel: ObservableObject {
     let app: ApplicationController
     init(app: ApplicationController) {
         self.app = app
-        fetchRestaurants()
+        
+        isFetchingRestaurants = true
         
         restaurantImageBucket.publisher
             .receive(on: OperationQueue.main)
@@ -56,10 +58,26 @@ class ViewModel: ObservableObject {
                 self.objectWillChange.send()
             }
             .store(in: &subscriptions)
+        
+        locationManager.publisher
+            .receive(on: OperationQueue.main)
+            .sink { _ in
+                
+            } receiveValue: { _ in
+                if let lat = self.locationManager.lat, let lon = self.locationManager.lon {
+                    self.fetchRestaurants(lat: lat,
+                                          lon: lon)
+                } else {
+                    self.fetchRestaurants(lat: ApplicationController.defaultLat,
+                                          lon: ApplicationController.defaultLon)
+                }
+            }
+            .store(in: &subscriptions)
+        locationManager.startObservingLocation()
     }
     
     private var fetchRestaurantsTask: Task<Void, Never>?
-    func fetchRestaurants() {
+    func fetchRestaurants(lat: Double, lon: Double) {
         fetchRestaurantsTask?.cancel()
         fetchRestaurantsTask = Task {
             await MainActor.run {
@@ -67,8 +85,8 @@ class ViewModel: ObservableObject {
                 self.didFailToFetchRestaurants = false
             }
             do {
-                let _restaurants = try await app.network.download(endpoint: Endpoints.restaurants(lat: ApplicationController.defaultLat,
-                                                                                                  lon: ApplicationController.defaultLon))
+                let _restaurants = try await app.network.download(endpoint: Endpoints.restaurants(lat: lat,
+                                                                                                  lon: lon))
                     .businesses
                 
                 if Task.isCancelled {
@@ -101,10 +119,6 @@ class ViewModel: ObservableObject {
         }
     }
     
-    
-    
-    //@Published var isFetchingReviews = false
-    //@Published var didFailToFetchReviews = false
     private var fetchReviewsTask: Task<Void, Never>?
     func fetchReviews(for restaurant: Restaurant) {
         fetchReviewsTask?.cancel()
@@ -123,8 +137,6 @@ class ViewModel: ObservableObject {
                     }
                     return
                 }
-                
-                print("_reviews = \(_reviews)")
                 
                 await MainActor.run {
                     self.isFetchingReviews = false
@@ -146,9 +158,6 @@ class ViewModel: ObservableObject {
     func selectRestaurantIntent(for restaurant: Restaurant) {
         fetchReviews(for: restaurant)
     }
-    
-    
-    
     
     func handleRestaurantCellDidAppear(for restaurant: Restaurant) {
         if let urlString = restaurant.image_url, let url = URL(string: urlString) {
@@ -190,84 +199,6 @@ class ViewModel: ObservableObject {
         return reviewImageBucket.imageDownloadError(for: review)
     }
     
-    /*
-    func image(for restaurant: Restaurant) -> UIImage? {
-        return _restaurantImageDict[restaurant]
-    }
-    
-    func imageDownloadError(for restaurant: Restaurant) -> Bool {
-        return _incapableThumbDownloadingRestaurantSet.contains(restaurant)
-    }
-    
-    private var _restaurantImageDict = [Restaurant: UIImage]()
-    private var _activelyDownloadingThumbTasks = [Restaurant: Task<Void, Never>]()
-    private var _incapableThumbDownloadingRestaurantSet = Set<Restaurant>()
-    
-    func handleRestaurantCellDidAppear(for restaurant: Restaurant) {
-        
-        // Start downloading the image, only if we need to...
-        if _incapableThumbDownloadingRestaurantSet.contains(restaurant) { return }
-        if _activelyDownloadingThumbTasks[restaurant] != nil { return }
-        if _restaurantImageDict[restaurant] != nil { return }
-        
-        // Can we get a functional url?
-        var url: URL?
-        if let urlString = restaurant.image_url {
-            url = URL(string: urlString)
-        }
-        
-        guard let url = url else {
-            _incapableThumbDownloadingRestaurantSet.insert(restaurant)
-            return
-        }
-        
-        _activelyDownloadingThumbTasks[restaurant] = Task {
-            do {
-                let (data, _) = try await URLSession.shared.data(from: url)
-                guard let image = UIImage(data: data) else {
-                    throw URLError(.cannotDecodeRawData)
-                }
-                guard image.size.width > 0.0 && image.size.height > 0.0 else {
-                    throw ImageDownloadError.invalidDimension
-                }
-                
-                await MainActor.run {
-                    _incapableThumbDownloadingRestaurantSet.remove(restaurant)
-                    _activelyDownloadingThumbTasks.removeValue(forKey: restaurant)
-                    _restaurantImageDict[restaurant] = image
-                    
-                    self.objectWillChange.send()
-                }
-                
-            } catch let error {
-                print("thumb download error: \(error.localizedDescription)")
-                print("thumb download url: \(url)")
-                
-                if Task.isCancelled {
-                    await MainActor.run {
-                        _incapableThumbDownloadingRestaurantSet.remove(restaurant)
-                        _activelyDownloadingThumbTasks.removeValue(forKey: restaurant)
-                    }
-                    return
-                } else {
-                    await MainActor.run {
-                        _incapableThumbDownloadingRestaurantSet.insert(restaurant)
-                        _activelyDownloadingThumbTasks.removeValue(forKey: restaurant)
-                        self.objectWillChange.send()
-                    }
-                }
-            }
-        }
-    }
-    
-    func handleRestaurantCellDidDisappear(for restaurant: Restaurant) {
-        // Stop downloading the patch...
-        _activelyDownloadingThumbTasks[restaurant]?.cancel()
-        _incapableThumbDownloadingRestaurantSet.remove(restaurant)
-    }
-    */
-    
-    
     func nameString(restaurant: Restaurant) -> String {
         return restaurant.name
     }
@@ -278,6 +209,13 @@ class ViewModel: ObservableObject {
     
     func phoneString(restaurant: Restaurant) -> String? {
         return restaurant.display_phone
+    }
+    
+    func distanceString(restaurant: Restaurant) -> String? {
+        if let distance = restaurant.distance {
+            return String(format: "%.1f km", distance / 1000.0)
+        }
+        return nil
     }
     
     func addressString(restaurant: Restaurant) -> String? {
@@ -311,5 +249,4 @@ class ViewModel: ObservableObject {
         }
         return nil
     }
-    
 }

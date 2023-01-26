@@ -26,7 +26,7 @@ struct RestaurantsView: View {
                 }
             }
         }
-        .navigationTitle("Hot Locals")
+        .navigationTitle("Restaurants")
         .navigationDestination(for: RestaurantDetails.self) { restaurantDetails in
             RestaurantDetailsView(viewModel: viewModel,
                                   restaurantDetails: restaurantDetails)
@@ -36,8 +36,6 @@ struct RestaurantsView: View {
                isPresented: $viewModel.didFailToFetchReviews) {
             Button("OK") { }
         }
-        
-        
     }
     
     private func restaurantsView() -> some View {
@@ -70,3 +68,4 @@ struct RestaurantsView_Previews: PreviewProvider {
         RestaurantsView(viewModel: ViewModel.mock())
     }
 }
+

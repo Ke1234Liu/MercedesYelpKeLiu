@@ -18,14 +18,14 @@ struct LoadingOverlay: View {
                 VStack(spacing: Device.isIpad ? 24.0 : 16.0) {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
-                        .tint(Color("theme1_saffron"))
+                        .tint(.white)
                         .dynamicTypeSize(Device.isIpad ? DynamicTypeSize.xxxLarge : DynamicTypeSize.xLarge)
                         .scaleEffect(CGSize(width: 1.65, height: 1.65))
                     
                     HStack {
                         Text(text)
                             .font(.system(size: Device.isIpad ? 24.0 : 16.0).bold())
-                            .foregroundColor(Color("theme1_saffron"))
+                            .foregroundColor(.white)
                     }
                     .frame(maxWidth: 200.0)
                 }
@@ -33,7 +33,7 @@ struct LoadingOverlay: View {
             }
             Spacer()
         }
-        .background(Color("theme1_charcoal").opacity(0.8))
+        .background(Color("theme1_charcoal").opacity(0.88))
     }
 }
 

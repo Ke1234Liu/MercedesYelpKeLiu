@@ -11,7 +11,6 @@ struct ExpandCollapseButton: View {
     
     let isExpanded: Bool
     let action: () -> Void
-    
     var body: some View {
         ZStack {
             Button {
@@ -22,7 +21,6 @@ struct ExpandCollapseButton: View {
                         .opacity(isExpanded ? 1.0 : 0.0)
                     Image(systemName: "plus")
                         .opacity(isExpanded ? 0.0 : 1.0)
-                    
                 }
                 .font(.system(size: 28.0).bold())
                 .foregroundColor(Color("theme1_saffron"))

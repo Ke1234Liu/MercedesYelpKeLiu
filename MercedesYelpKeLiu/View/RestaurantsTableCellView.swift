@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct RestaurantTableCellView: View {
     @ObservedObject var viewModel: ViewModel
     let restaurant: Restaurant
@@ -18,24 +20,60 @@ struct RestaurantTableCellView: View {
                 HStack {
                     Spacer()
                     VStack {
-                        Text(restaurant.name)
-                            .font(.system(size: Device.isIpad ? 42.0 : 32.0))
-                            .foregroundColor(Color("theme1_charcoal"))
-                        Text(restaurant.id)
-                            .font(.system(size: Device.isIpad ? 34.0 : 26.0))
-                            .foregroundColor(Color("theme1_charcoal"))
+                        HStack {
+                            Text(restaurant.name)
+                                .font(.system(size: Device.isIpad ? 26.0 : 20.0).bold())
+                                .foregroundColor(Color("theme1_charcoal"))
+                                .multilineTextAlignment(.leading)
+                            Spacer()
+                        }
+                        
+                        if let price = viewModel.priceString(restaurant: restaurant) {
+                            HStack {
+                                
+                                Text(try! AttributedString(markdown: "Price Range: **\(price)**"))
+                                
+                                    .font(.system(size: Device.isIpad ? 24.0 : 16.0))
+                                    .foregroundColor(Color("theme1_charcoal"))
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                            }
+                        }
+                        
+                        if let rating = viewModel.ratingString(restaurant: restaurant) {
+                            HStack {
+                                Text("Average Rating: \(rating)")
+                                    .font(.system(size: Device.isIpad ? 24.0 : 16.0))
+                                    .foregroundColor(Color("theme1_charcoal"))
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                            }
+                        }
+                        
+                        if let distance = viewModel.distanceString(restaurant: restaurant) {
+                            HStack {
+                                Text("Distance: \(distance)")
+                                    .font(.system(size: Device.isIpad ? 24.0 : 16.0))
+                                    .foregroundColor(Color("theme1_charcoal"))
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                            }
+                        }
+                        
                     }
                     Spacer()
                 }
                 .padding(.vertical, Device.isIpad ? 16.0 : 9.0)
-                .padding(.horizontal, Device.isIpad ? 24.0 : 16.0)
+                .padding(.trailing, Device.isIpad ? 24.0 : 16.0)
+                .padding(.leading, Device.isIpad ? 6.0 : 4.0)
+                
             }
             .box(backgroundColor: Color("theme1_saffron"),
                      strokeColor: Color("theme1_charcoal"),
                      cornerRadius: 12.0,
-                     strokeWidth: Device.isIpad ? 6.0 : 3.0)
-            .padding(.horizontal, Device.isIpad ? 24.0 : 16.0)
-            .padding(.vertical, Device.isIpad ? 7.0 : 4.0)
+                     strokeWidth: Device.isIpad ? 2.0 : 1.0)
+            .padding(.horizontal, Device.isIpad ? 18.0 : 12.0)
+            .padding(.vertical, Device.isIpad ? 5.0 : 3.0)
         }
     }
     
@@ -66,7 +104,7 @@ struct RestaurantTableCellView: View {
                 .box(backgroundColor: Color("theme1_mudslide"),
                          strokeColor: Color("theme1_charcoal"),
                          cornerRadius: 12.0,
-                         strokeWidth: Device.isIpad ? 6.0 : 3.0)
+                         strokeWidth: Device.isIpad ? 2.0 : 1.0)
             }
         }
         .frame(width: Device.isIpad ? 120.0 : 90.0,
